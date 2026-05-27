@@ -21,7 +21,11 @@ const tipsText = computed(() => {
 })
 
 function getAmazonUrl(equipName) {
-  const asin = props.data?.asin?.[equipName]
+  if (!props.data) return null
+  const items = locale.value === 'fr' ? props.data.fr.equipment : props.data.en.equipment
+  const idx = items.indexOf(equipName)
+  const enName = props.data.en.equipment[idx]
+  const asin = props.data?.asin?.[enName]
   if (!asin || !asin.trim()) return null
   return `https://www.amazon.ca/dp/${asin}?tag=redag2-20`
 }
