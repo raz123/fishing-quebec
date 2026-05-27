@@ -45,7 +45,8 @@ const messages = {
     speciesPopup: {
       season: 'Season',
       bestTime: 'Best time',
-      method: 'Method'
+      method: 'Method',
+      regulations: 'Regulations'
     },
     disclosure: 'As an Amazon Associate I earn from qualifying purchases.',
     footer: 'Data source: Données Québec (CC-BY 4.0)'
@@ -92,7 +93,8 @@ const messages = {
     speciesPopup: {
       season: 'Saison',
       bestTime: 'Meilleur moment',
-      method: 'Méthode'
+      method: 'Méthode',
+      regulations: 'Règlements'
     },
     disclosure: 'En tant qu\'Associé Amazon, je réalise un bénéfice sur les achats remplissant les conditions.',
     footer: 'Source des données : Données Québec (CC-BY 4.0)'
