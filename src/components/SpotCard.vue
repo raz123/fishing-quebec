@@ -200,6 +200,32 @@ const formattedSeason = computed(() => {
   color: var(--color-primary-hover);
   text-decoration: underline;
 }
+@media (max-width: 767px) {
+  .spot-card {
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+  .card-header {
+    padding: 14px 16px 10px;
+  }
+  .card-title {
+    font-size: 15px;
+  }
+  .card-meta {
+    padding: 8px 16px;
+  }
+  .contact-info {
+    padding: 8px 16px;
+  }
+  .species-section {
+    padding: 12px 16px;
+  }
+}
 .species-section {
   padding: 16px 20px;
 }

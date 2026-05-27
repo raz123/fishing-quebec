@@ -27,6 +27,19 @@ const {
 
 const selectedSpotId = ref(null)
 const showFilters = ref(true)
+const sidebarOpen = ref(false)
+
+function filterToggle() {
+  if (window.innerWidth < 768) {
+    sidebarOpen.value = !sidebarOpen.value
+  } else {
+    showFilters.value = !showFilters.value
+  }
+}
+
+function closeSidebar() {
+  sidebarOpen.value = false
+}
 
 const selectedSpot = computed(() => {
   if (!selectedSpotId.value) return null
@@ -61,17 +74,21 @@ const errorText = computed(() => {
         <p class="app-subtitle">{{ t('app.subtitle') }}</p>
       </div>
       <div class="header-right">
+        <button class="mobile-filter-btn" @click="filterToggle" aria-label="Toggle filters">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="16" cy="18" r="1.5" fill="currentColor"/></svg>
+        </button>
         <LangToggle />
       </div>
     </header>
 
     <div class="app-body">
-      <aside :class="['sidebar', { collapsed: !showFilters }]">
-        <div class="sidebar-toggle" @click="showFilters = !showFilters" role="button" tabindex="0">
-          <svg v-if="showFilters" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <div v-if="sidebarOpen" class="sidebar-backdrop" @click="closeSidebar"></div>
+      <aside :class="['sidebar', { collapsed: !showFilters, open: sidebarOpen }]">
+        <div class="sidebar-toggle" @click="filterToggle" role="button" tabindex="0">
+          <svg v-if="showFilters || sidebarOpen" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </div>
-        <div v-show="showFilters" class="sidebar-content">
+        <div v-show="showFilters || sidebarOpen" class="sidebar-content">
           <FilterPanel
             :species="allSpecies"
             :selected-species="selectedSpecies"
@@ -296,5 +313,70 @@ html, body, #app {
   color: #ef4444;
   text-align: center;
   max-width: 250px;
+}
+.mobile-filter-btn {
+  display: none;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  padding: 6px;
+  color: #fff;
+  line-height: 0;
+  transition: all var(--transition-fast);
+}
+.mobile-filter-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+.sidebar-backdrop {
+  display: none;
+}
+@media (max-width: 767px) {
+  .mobile-filter-btn {
+    display: flex;
+    align-items: center;
+  }
+  .app-header {
+    padding: 10px 12px;
+  }
+  .app-title {
+    font-size: 15px;
+  }
+  .app-subtitle {
+    display: none;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    min-width: 280px;
+    height: 100vh;
+    z-index: 200;
+    transition: left var(--transition-base);
+    box-shadow: var(--shadow-lg);
+    border-right: none;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .sidebar.collapsed {
+    width: 280px;
+    min-width: 280px;
+  }
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 150;
+  }
+  .sidebar-toggle {
+    top: 12px;
+    right: 12px;
+  }
+  .locate-wrapper {
+    bottom: 16px;
+  }
 }
 </style>

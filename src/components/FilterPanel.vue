@@ -177,4 +177,31 @@ function onSearch() {
   background: var(--color-bg);
   border-color: var(--color-secondary);
 }
+@media (max-width: 767px) {
+  .filter-panel {
+    padding: 16px 16px 80px;
+    min-height: 100%;
+  }
+  .filter-search {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .species-item {
+    padding: 6px 6px;
+    font-size: 14px;
+    min-height: 36px;
+  }
+  .species-item input {
+    width: 18px;
+    height: 18px;
+  }
+  .type-toggle button {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  .show-more-btn {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+}
 </style>

@@ -34,13 +34,15 @@ function getAmazonUrl(equipName) {
         <h3 class="popup-title">{{ locale === 'fr' ? species.fr : species.en }}</h3>
         <span class="popup-latin">{{ species.latin }}</span>
         <span v-if="isBitingNow(species.fr)" class="popup-biting">{{ locale === 'fr' ? 'En action' : 'Biting now' }}</span>
-        <a v-if="data.wikipedia" :href="locale === 'fr' ? data.wikipedia.fr : data.wikipedia.en" target="_blank" rel="noopener" class="wiki-btn" :title="t('speciesPopup.wikipedia')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5v-7l5 3.5-5 3.5z"/></svg>
-        </a>
-        <button class="popup-close" @click="$emit('close')" aria-label="Close">
+        <div class="header-right-group">
+          <a v-if="data.wikipedia" :href="locale === 'fr' ? data.wikipedia.fr : data.wikipedia.en" target="_blank" rel="noopener" class="wiki-btn" :title="t('speciesPopup.wikipedia')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <button class="popup-close" @click="$emit('close')" aria-label="Close">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
+    </div>
 
       <div class="popup-body">
         <div class="info-grid">
@@ -170,6 +172,12 @@ function getAmazonUrl(equipName) {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
 }
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
 .popup-close {
   background: none;
   border: none;
@@ -188,7 +196,7 @@ function getAmazonUrl(equipName) {
   display: flex;
   align-items: center;
   padding: 5px;
-  color: #6B7280;
+  color: #94A3B8;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   text-decoration: none;
@@ -308,5 +316,29 @@ function getAmazonUrl(equipName) {
   flex-shrink: 0;
   color: var(--color-success);
   margin-top: 2px;
+}
+@media (max-width: 767px) {
+  .popup-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .popup-card {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .popup-header {
+    padding: 16px 16px 12px;
+  }
+  .popup-body {
+    padding: 16px;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .info-item {
+    padding: 10px;
+  }
 }
 </style>
