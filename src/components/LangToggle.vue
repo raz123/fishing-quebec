@@ -12,18 +12,20 @@ const { t, toggleLang } = useI18n()
 
 <style scoped>
 .lang-toggle {
-  background: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  padding: 5px 12px;
   font-size: 12px;
   font-weight: 600;
-  color: #374151;
+  color: #fff;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+  letter-spacing: 0.02em;
 }
 .lang-toggle:hover {
-  background: #f3f4f6;
-  border-color: #9ca3af;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 </style>

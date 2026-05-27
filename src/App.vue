@@ -67,9 +67,9 @@ const errorText = computed(() => {
 
     <div class="app-body">
       <aside :class="['sidebar', { collapsed: !showFilters }]">
-        <div class="sidebar-toggle" @click="showFilters = !showFilters">
-          <span v-if="showFilters">&times;</span>
-          <span v-else>&#9776;</span>
+        <div class="sidebar-toggle" @click="showFilters = !showFilters" role="button" tabindex="0">
+          <svg v-if="showFilters" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </div>
         <div v-show="showFilters" class="sidebar-content">
           <FilterPanel
@@ -123,6 +123,29 @@ const errorText = computed(() => {
 </template>
 
 <style>
+:root {
+  --color-primary: #0EA5E9;
+  --color-primary-hover: #0284C7;
+  --color-secondary: #38BDF8;
+  --color-cta: #F97316;
+  --color-cta-hover: #EA580C;
+  --color-bg: #F0F9FF;
+  --color-surface: #FFFFFF;
+  --color-text: #0C4A6E;
+  --color-text-secondary: #64748B;
+  --color-border: #E2E8F0;
+  --color-success: #059669;
+  --color-success-light: #D1FAE5;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+}
 * {
   margin: 0;
   padding: 0;
@@ -131,7 +154,21 @@ const errorText = computed(() => {
 html, body, #app {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
 }
 </style>
 
@@ -145,10 +182,11 @@ html, body, #app {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
-  background: #1e3a5f;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0C4A6E 0%, #0EA5E9 100%);
   color: #fff;
   z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .header-left {
   flex: 1;
@@ -156,10 +194,11 @@ html, body, #app {
 .app-title {
   font-size: 18px;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 .app-subtitle {
   font-size: 12px;
-  color: #93c5fd;
+  color: rgba(255,255,255,0.75);
   margin-top: 2px;
 }
 .header-right {
@@ -177,9 +216,9 @@ html, body, #app {
   width: 260px;
   min-width: 260px;
   background: #fff;
-  border-right: 1px solid #e5e7eb;
+  border-right: 1px solid var(--color-border);
   overflow-y: auto;
-  transition: width 0.2s, min-width 0.2s;
+  transition: width var(--transition-base), min-width var(--transition-base);
   position: relative;
   z-index: 50;
 }
@@ -191,19 +230,20 @@ html, body, #app {
   position: absolute;
   top: 8px;
   right: 8px;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   cursor: pointer;
-  color: #6b7280;
-  border-radius: 4px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
   z-index: 2;
+  transition: all var(--transition-fast);
 }
 .sidebar-toggle:hover {
-  background: #f3f4f6;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 .sidebar-content {
   padding-top: 4px;
@@ -222,14 +262,17 @@ html, body, #app {
   text-align: center;
   z-index: 100;
   background: rgba(255, 255, 255, 0.9);
-  padding: 24px;
-  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 28px 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 }
 .spinner-lg {
   width: 32px;
   height: 32px;
-  border: 3px solid #e5e7eb;
-  border-top-color: #3b82f6;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
   margin: 0 auto 12px;

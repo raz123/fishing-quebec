@@ -27,10 +27,10 @@ function closePopup() {
       :key="species.fr"
       class="species-card"
     >
-      <div class="species-header" @click="openPopup(species)" role="button" tabindex="0">
+      <div class="species-header" @click="openPopup(species)" role="button" tabindex="0" @keydown.enter="openPopup(species)" @keydown.space.prevent="openPopup(species)">
         <span class="species-name">{{ locale === 'fr' ? species.fr : species.en }}</span>
         <span class="species-latin">{{ species.latin }}</span>
-        <span class="click-hint">&#9432;</span>
+        <svg class="click-hint" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       </div>
     </div>
 
@@ -54,46 +54,55 @@ function closePopup() {
   gap: 6px;
 }
 .species-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #f9fafb;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: all var(--transition-fast);
+}
+.species-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
 }
 .species-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px;
+  padding: 10px 12px;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background var(--transition-fast);
   user-select: none;
+  border-radius: var(--radius-md);
 }
 .species-header:hover {
-  background: #e5e7eb;
+  background: var(--color-bg);
 }
-.species-header:focus {
-  outline: 2px solid #3b82f6;
+.species-header:focus-visible {
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
-  border-radius: 8px;
 }
 .species-name {
   font-weight: 600;
   font-size: 14px;
-  color: #111827;
+  color: var(--color-text);
 }
 .species-latin {
   font-style: italic;
   font-size: 11px;
-  color: #9ca3af;
+  color: var(--color-text-secondary);
   flex: 1;
 }
 .click-hint {
-  font-size: 14px;
-  color: #9ca3af;
-  opacity: 0.6;
+  color: var(--color-text-secondary);
+  opacity: 0.4;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+.species-card:hover .click-hint {
+  opacity: 0.8;
 }
 .empty-state {
   text-align: center;
-  color: #9ca3af;
+  color: var(--color-text-secondary);
   font-size: 13px;
   padding: 24px;
 }

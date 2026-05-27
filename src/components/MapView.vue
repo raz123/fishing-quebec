@@ -18,24 +18,24 @@ let markersLayer = null
 let userMarker = null
 
 const publicIcon = L.divIcon({
-  html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#2563eb"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+  html: '<svg width="26" height="26" viewBox="0 0 24 24" fill="#0EA5E9"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
   className: 'custom-marker',
-  iconSize: [24, 24],
-  iconAnchor: [12, 24]
+  iconSize: [26, 26],
+  iconAnchor: [13, 26]
 })
 
 const pourvoirieIcon = L.divIcon({
-  html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+  html: '<svg width="26" height="26" viewBox="0 0 24 24" fill="#059669"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
   className: 'custom-marker',
-  iconSize: [24, 24],
-  iconAnchor: [12, 24]
+  iconSize: [26, 26],
+  iconAnchor: [13, 26]
 })
 
 const selectedIcon = L.divIcon({
-  html: '<svg width="32" height="32" viewBox="0 0 24 24" fill="#dc2626"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+  html: '<svg width="34" height="34" viewBox="0 0 24 24" fill="#F97316"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
   className: 'custom-marker selected',
-  iconSize: [32, 32],
-  iconAnchor: [16, 32]
+  iconSize: [34, 34],
+  iconAnchor: [17, 34]
 })
 
 function createMarker(feature) {
@@ -84,9 +84,9 @@ function updateUserMarker() {
 
     const accCircle = L.circle([lat, lng], {
       radius: props.userPosition.accuracy || 500,
-      fillColor: '#6366f1',
+      fillColor: '#0EA5E9',
       fillOpacity: 0.1,
-      color: '#6366f1',
+      color: '#0EA5E9',
       weight: 1,
       opacity: 0.3
     }).addTo(map)
@@ -144,7 +144,7 @@ onMounted(() => {
   border: none;
 }
 :deep(.custom-marker.selected svg) {
-  filter: drop-shadow(0 0 4px rgba(220, 38, 38, 0.6));
+  filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.6));
 }
 </style>
 <style>
@@ -155,9 +155,9 @@ onMounted(() => {
 .user-dot {
   width: 16px;
   height: 16px;
-  background: #6366f1;
+  background: #0EA5E9;
   border: 3px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
 }
 </style>

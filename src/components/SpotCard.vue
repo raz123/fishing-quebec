@@ -28,7 +28,9 @@ const spotType = computed(() => {
   <div v-if="spot" class="spot-card">
     <div class="card-header">
       <h2 class="card-title">{{ spotName }}</h2>
-      <button class="close-btn" @click="$emit('close')">&times;</button>
+      <button class="close-btn" @click="$emit('close')" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
 
     <div class="card-meta">
@@ -76,45 +78,58 @@ const spotType = computed(() => {
 <style scoped>
 .spot-card {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 8px;
+  right: 8px;
   width: 380px;
-  max-width: 100%;
-  height: 100%;
-  background: #fff;
-  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
   overflow-y: auto;
   z-index: 1000;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 16px 16px 8px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
 }
 .card-title {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-text);
   flex: 1;
   line-height: 1.3;
+  padding-right: 8px;
 }
 .close-btn {
   background: none;
   border: none;
-  font-size: 24px;
-  color: #6b7280;
   cursor: pointer;
-  padding: 0 0 0 8px;
-  line-height: 1;
+  padding: 4px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  line-height: 0;
 }
 .close-btn:hover {
-  color: #111827;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 .card-meta {
-  padding: 8px 16px;
+  padding: 12px 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -123,30 +138,30 @@ const spotType = computed(() => {
 .type-badge {
   font-size: 11px;
   font-weight: 600;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 10px;
 }
 .type-badge.public {
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: #E0F2FE;
+  color: #0369A1;
 }
 .type-badge.pourvoirie {
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--color-success-light);
+  color: #065F46;
 }
 .meta-item {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--color-text-secondary);
 }
 .meta-item.distance {
   font-weight: 600;
-  color: #6366f1;
+  color: var(--color-primary);
 }
 .contact-info {
-  padding: 8px 16px;
-  background: #f9fafb;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 20px;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 .info-row {
   display: flex;
@@ -155,27 +170,29 @@ const spotType = computed(() => {
   font-size: 13px;
 }
 .info-label {
-  color: #6b7280;
+  color: var(--color-text-secondary);
   white-space: nowrap;
   min-width: 70px;
 }
 .info-value {
-  color: #374151;
+  color: var(--color-text);
 }
 .info-value.link {
-  color: #3b82f6;
+  color: var(--color-primary);
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 .info-value.link:hover {
+  color: var(--color-primary-hover);
   text-decoration: underline;
 }
 .species-section {
-  padding: 12px 16px;
+  padding: 16px 20px;
 }
 .section-header {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text);
 }
 </style>

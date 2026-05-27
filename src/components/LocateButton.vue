@@ -30,31 +30,39 @@ const { t } = useI18n()
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 9px 16px;
   font-size: 13px;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text);
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.15s;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  font-family: inherit;
 }
 .locate-btn:hover:not(:disabled) {
-  background: #f3f4f6;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 .locate-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+.locate-btn svg {
+  color: var(--color-primary);
+}
 .spinner {
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 2px solid #d1d5db;
-  border-top-color: #3b82f6;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
 }

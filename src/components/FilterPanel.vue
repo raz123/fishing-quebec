@@ -86,56 +86,70 @@ function onSearch() {
 
 <style scoped>
 .filter-panel {
-  padding: 12px;
+  padding: 16px;
 }
 .filter-title {
   margin: 0 0 8px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 .filter-search {
   width: 100%;
-  padding: 6px 8px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   box-sizing: border-box;
+  font-family: inherit;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+.filter-search::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
 }
 .filter-search:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 .species-list {
   max-height: 250px;
   overflow-y: auto;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .species-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 2px 0;
+  gap: 8px;
+  padding: 4px 6px;
   font-size: 13px;
   cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+.species-item:hover {
+  background: var(--color-bg);
 }
 .species-item input {
-  accent-color: #3b82f6;
+  accent-color: var(--color-primary);
 }
 .show-more-btn {
   background: none;
   border: none;
-  color: #3b82f6;
+  color: var(--color-primary);
   font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  padding: 4px 0;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
 }
 .show-more-btn:hover {
-  text-decoration: underline;
+  color: var(--color-primary-hover);
 }
 .type-toggle {
   display: flex;
@@ -143,20 +157,24 @@ function onSearch() {
 }
 .type-toggle button {
   flex: 1;
-  padding: 6px 8px;
+  padding: 7px 8px;
   font-size: 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background: #fff;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--transition-fast);
+  font-family: inherit;
 }
 .type-toggle button.active {
-  background: #3b82f6;
+  background: var(--color-primary);
   color: #fff;
-  border-color: #3b82f6;
+  border-color: var(--color-primary);
 }
 .type-toggle button:hover:not(.active) {
-  background: #f3f4f6;
+  background: var(--color-bg);
+  border-color: var(--color-secondary);
 }
 </style>
