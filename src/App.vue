@@ -268,6 +268,7 @@ html, body, #app {
 .main-content {
   flex: 1;
   position: relative;
+  isolation: isolate;
 }
 .loading-overlay,
 .error-overlay,
