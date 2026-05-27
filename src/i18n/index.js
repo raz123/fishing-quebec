@@ -46,7 +46,8 @@ const messages = {
       season: 'Season',
       bestTime: 'Best time',
       method: 'Method',
-      regulations: 'Regulations'
+      regulations: 'Regulations',
+      wikipedia: 'Wikipedia'
     },
     disclosure: 'As an Amazon Associate I earn from qualifying purchases.',
     footer: 'Data source: Données Québec (CC-BY 4.0)'
@@ -94,7 +95,8 @@ const messages = {
       season: 'Saison',
       bestTime: 'Meilleur moment',
       method: 'Méthode',
-      regulations: 'Règlements'
+      regulations: 'Règlements',
+      wikipedia: 'Wikipédia'
     },
     disclosure: 'En tant qu\'Associé Amazon, je réalise un bénéfice sur les achats remplissant les conditions.',
     footer: 'Source des données : Données Québec (CC-BY 4.0)'

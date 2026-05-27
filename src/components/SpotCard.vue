@@ -22,6 +22,20 @@ const spotType = computed(() => {
   if (!props.spot) return ''
   return props.spot.properties.type === 'pourvoirie' ? 'Pourvoirie' : 'Public'
 })
+
+const formattedSeason = computed(() => {
+  if (!props.spot?.properties.season) return ''
+  const s = props.spot.properties.season
+  const parts = s.split(' - ')
+  if (parts.length !== 2) return s
+  const fmt = (iso) => {
+    if (!iso || iso === '?') return '?'
+    const d = new Date(iso)
+    if (isNaN(d.getTime())) return iso
+    return d.toLocaleDateString(locale.value === 'fr' ? 'fr-CA' : 'en-CA', { month: 'short', day: 'numeric', year: 'numeric' })
+  }
+  return `${fmt(parts[0])} - ${fmt(parts[1])}`
+})
 </script>
 
 <template>
@@ -60,9 +74,9 @@ const spotType = computed(() => {
         <span class="info-label">{{ t('spot.website') }}:</span>
         <a :href="spot.properties.website" target="_blank" rel="noopener" class="info-value link">{{ spot.properties.website }}</a>
       </div>
-      <div v-if="spot.properties.season" class="info-row">
+      <div v-if="formattedSeason" class="info-row">
         <span class="info-label">{{ t('spot.season') }}:</span>
-        <span class="info-value">{{ spot.properties.season }}</span>
+        <span class="info-value">{{ formattedSeason }}</span>
       </div>
     </div>
 

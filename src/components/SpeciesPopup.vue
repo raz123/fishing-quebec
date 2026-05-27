@@ -34,6 +34,9 @@ function getAmazonUrl(equipName) {
         <h3 class="popup-title">{{ locale === 'fr' ? species.fr : species.en }}</h3>
         <span class="popup-latin">{{ species.latin }}</span>
         <span v-if="isBitingNow(species.fr)" class="popup-biting">{{ locale === 'fr' ? 'En action' : 'Biting now' }}</span>
+        <a v-if="data.wikipedia" :href="locale === 'fr' ? data.wikipedia.fr : data.wikipedia.en" target="_blank" rel="noopener" class="wiki-btn" :title="t('speciesPopup.wikipedia')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5v-7l5 3.5-5 3.5z"/></svg>
+        </a>
         <button class="popup-close" @click="$emit('close')" aria-label="Close">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
@@ -168,7 +171,6 @@ function getAmazonUrl(equipName) {
   50% { opacity: 0.7; }
 }
 .popup-close {
-  margin-left: auto;
   background: none;
   border: none;
   cursor: pointer;
@@ -180,6 +182,19 @@ function getAmazonUrl(equipName) {
 }
 .popup-close:hover {
   color: var(--color-text);
+  background: var(--color-bg);
+}
+.wiki-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: #6B7280;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+.wiki-btn:hover {
+  color: #2563EB;
   background: var(--color-bg);
 }
 .popup-body {
