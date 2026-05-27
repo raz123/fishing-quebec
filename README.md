@@ -1,5 +1,26 @@
-# Vue 3 + Vite
+# Quebec Fishing Spots
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Find public fishing spots and pourvoiries (outfitters) across Quebec.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+- **Interactive map** with 1,800+ spots
+- **Fish species** information for each spot
+- **Recommended equipment** with Amazon links
+- **Bilingual** (English/Français)
+- **Geolocation** to find spots near you
+
+## Development
+
+```bash
+npm install
+node scripts/build-data.cjs  # Fetch latest data from Quebec open data APIs
+npm run dev                   # Start dev server
+```
+
+## Data Sources
+
+- [Guide de consommation du poisson](https://www.donneesquebec.ca/recherche/fr/dataset/e9a065a3-977a-479a-b935-dbfcd78347b6) (CC-BY 4.0)
+- [Pourvoiries SIT Québec](https://www.donneesquebec.ca/recherche/dataset/f43fbfd7-2b40-4f40-99da-2e0ac1339012) (CC-BY 4.0)
+
+## License
+
+Data: CC-BY 4.0. Code: MIT.
