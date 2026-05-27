@@ -13,7 +13,7 @@ const { t, locale } = useI18n()
 function getAmazonUrl(equipName) {
   const asin = props.data?.asin?.[equipName]
   if (!asin || !asin.trim()) return null
-  return `https://www.amazon.com/dp/${asin}?tag=redag2-20`
+  return `https://www.amazon.ca/dp/${asin}?tag=redag2-20`
 }
 </script>
 
