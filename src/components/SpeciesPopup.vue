@@ -1,5 +1,7 @@
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from '../i18n/index.js'
+import { useBitingNow } from '../composables/useBitingNow.js'
 
 const props = defineProps({
   species: { type: Object, default: null },
@@ -9,6 +11,14 @@ const props = defineProps({
 const emit = defineEmits(['close'])
 
 const { t, locale } = useI18n()
+const { isBitingNow } = useBitingNow()
+
+const tipsText = computed(() => {
+  if (!props.data) return ''
+  const tips = locale.value === 'fr' ? props.data.fr.tips : props.data.en.tips
+  const method = locale.value === 'fr' ? props.data.method.fr : props.data.method.en
+  return tips && !method.startsWith(tips.slice(0, 30)) ? tips : ''
+})
 
 function getAmazonUrl(equipName) {
   const asin = props.data?.asin?.[equipName]
@@ -23,6 +33,7 @@ function getAmazonUrl(equipName) {
       <div class="popup-header">
         <h3 class="popup-title">{{ locale === 'fr' ? species.fr : species.en }}</h3>
         <span class="popup-latin">{{ species.latin }}</span>
+        <span v-if="isBitingNow(species.fr)" class="popup-biting">{{ locale === 'fr' ? 'En action' : 'Biting now' }}</span>
         <button class="popup-close" @click="$emit('close')" aria-label="Close">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
@@ -77,9 +88,9 @@ function getAmazonUrl(equipName) {
           </div>
         </div>
 
-        <div v-if="(locale === 'fr' ? data.fr.tips : data.en.tips)" class="tips-box">
+        <div v-if="tipsText" class="tips-box">
           <svg class="tips-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
-          <span>{{ locale === 'fr' ? data.fr.tips : data.en.tips }}</span>
+          <span>{{ tipsText }}</span>
         </div>
       </div>
     </div>
@@ -131,6 +142,22 @@ function getAmazonUrl(equipName) {
   font-style: italic;
   font-size: 12px;
   color: var(--color-text-secondary);
+}
+.popup-biting {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: #BBF7D0;
+  color: #065F46;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  animation: pulse-badge 2s infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 .popup-close {
   margin-left: auto;
