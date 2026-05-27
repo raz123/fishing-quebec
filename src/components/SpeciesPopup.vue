@@ -31,18 +31,20 @@ function getAmazonUrl(equipName) {
   <div v-if="species && data" class="popup-overlay" @click.self="$emit('close')">
     <div class="popup-card">
       <div class="popup-header">
-        <h3 class="popup-title">{{ locale === 'fr' ? species.fr : species.en }}</h3>
-        <span class="popup-latin">{{ species.latin }}</span>
-        <span v-if="isBitingNow(species.fr)" class="popup-biting">{{ locale === 'fr' ? 'En action' : 'Biting now' }}</span>
+        <div class="header-left">
+          <h3 class="popup-title">{{ locale === 'fr' ? species.fr : species.en }}</h3>
+          <span class="popup-latin">{{ species.latin }}</span>
+          <span v-if="isBitingNow(species.fr)" class="popup-biting">{{ locale === 'fr' ? 'En action' : 'Biting now' }}</span>
+        </div>
         <div class="header-right-group">
           <a v-if="data.wikipedia" :href="locale === 'fr' ? data.wikipedia.fr : data.wikipedia.en" target="_blank" rel="noopener" class="wiki-btn" :title="t('speciesPopup.wikipedia')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 8l3 8 2-5 2 5 3-8"/></svg>
           </a>
           <button class="popup-close" @click="$emit('close')" aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
       </div>
-    </div>
 
       <div class="popup-body">
         <div class="info-grid">
@@ -134,16 +136,22 @@ function getAmazonUrl(equipName) {
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 .popup-header {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto;
   gap: 8px;
   padding: 20px 24px;
   border-bottom: 1px solid var(--color-border);
-  flex-wrap: wrap;
   position: sticky;
   top: 0;
   background: rgba(255,255,255,0.98);
   z-index: 1;
+}
+.header-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
 }
 .popup-title {
   font-size: 18px;
@@ -176,7 +184,7 @@ function getAmazonUrl(equipName) {
   display: flex;
   align-items: center;
   gap: 2px;
-  margin-left: auto;
+  align-self: start;
 }
 .popup-close {
   background: none;
@@ -328,7 +336,7 @@ function getAmazonUrl(equipName) {
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
   .popup-header {
-    padding: 16px 16px 12px;
+    padding: 12px 12px 8px;
   }
   .popup-body {
     padding: 16px;
