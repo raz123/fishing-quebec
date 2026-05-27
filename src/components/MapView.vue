@@ -77,15 +77,29 @@ function updateUserMarker() {
     userMarker = null
   }
   if (props.userPosition) {
-    userMarker = L.circleMarker([props.userPosition.lat, props.userPosition.lng], {
-      radius: 8,
+    const lat = props.userPosition.lat
+    const lng = props.userPosition.lng
+
+    map.setView([lat, lng], 10, { animate: true })
+
+    const accCircle = L.circle([lat, lng], {
+      radius: props.userPosition.accuracy || 500,
       fillColor: '#6366f1',
-      color: '#fff',
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0.8
+      fillOpacity: 0.1,
+      color: '#6366f1',
+      weight: 1,
+      opacity: 0.3
     }).addTo(map)
-    userMarker.bindTooltip('You are here', { direction: 'top' })
+
+    userMarker = L.marker([lat, lng], {
+      icon: L.divIcon({
+        html: '<div class="user-dot"></div>',
+        className: 'user-location-marker',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      })
+    }).addTo(map)
+    userMarker.bindTooltip('You are here', { direction: 'top', permanent: false })
   }
 }
 
@@ -131,5 +145,19 @@ onMounted(() => {
 }
 :deep(.custom-marker.selected svg) {
   filter: drop-shadow(0 0 4px rgba(220, 38, 38, 0.6));
+}
+</style>
+<style>
+.user-location-marker {
+  background: none !important;
+  border: none !important;
+}
+.user-dot {
+  width: 16px;
+  height: 16px;
+  background: #6366f1;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.5);
 }
 </style>

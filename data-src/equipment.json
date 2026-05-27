@@ -1,100 +1,160 @@
 {
   "Omble de fontaine": {
+    "season": { "fr": "Avril à Septembre", "en": "April to September" },
+    "timeOfDay": { "fr": "Aube et crépuscule", "en": "Dawn and dusk" },
+    "method": { "fr": "Pêche à la cuillère ou au ver dérivant près du fond dans les fosses profondes.", "en": "Spoon fishing or worm drifting near bottom in deep holes." },
     "fr": { "equipment": ["Canne spinning légère 6pi", "Moulinet 1000", "Cuillère Mepps Aglia #2", "Ver de mer creux"], "tips": "Pêche à la cuillère ou au ver en lac, surtout au printemps et à l'automne." },
     "en": { "equipment": ["Light spinning rod 6ft", "Reel size 1000", "Mepps Aglia #2 spoon", "Nightcrawlers"], "tips": "Fish with spoons or worms in lakes, especially spring and fall." },
     "asin": { "Light spinning rod 6ft": "", "Reel size 1000": "", "Mepps Aglia #2 spoon": "" }
   },
   "Touladi": {
+    "season": { "fr": "Mai à Octobre", "en": "May to October" },
+    "timeOfDay": { "fr": "Tôt le matin", "en": "Early morning" },
+    "method": { "fr": "Trolling profond avec downrigger ou pêche verticale au jig dans les lacs profonds (>10m).", "en": "Deep trolling with downrigger or vertical jigging in deep lakes (>10m)." },
     "fr": { "equipment": ["Canne spinning moyenne 7pi", "Moulinet 3000", "Cuillère Williams", "Trolle profond avec downrigger"], "tips": "Pêche en profondeur (>10m) au trolling ou à la verticale." },
     "en": { "equipment": ["Medium spinning rod 7ft", "Reel size 3000", "Williams spoon", "Deep trolling with downrigger"], "tips": "Deep water fishing (>10m) by trolling or vertical jigging." },
     "asin": { "Medium spinning rod 7ft": "", "Reel size 3000": "", "Williams spoon": "" }
   },
   "Truite arc-en-ciel": {
+    "season": { "fr": "Avril à Octobre", "en": "April to October" },
+    "timeOfDay": { "fr": "Après-midi et début de soirée", "en": "Afternoon and early evening" },
+    "method": { "fr": "Pêche à la mouche sèche ou au lancer léger avec petite cuillère en rivière.", "en": "Dry fly fishing or light casting with small spoon in rivers." },
     "fr": { "equipment": ["Canne spinning légère 6.6pi", "Moulinet 2000", "Petite cuillère", "Mouche artificielle"], "tips": "Pêche à la mouche ou au lancer léger en rivière." },
     "en": { "equipment": ["Light spinning rod 6.6ft", "Reel size 2000", "Small spoon", "Artificial fly"], "tips": "Fly fishing or light casting in rivers." },
     "asin": { "Light spinning rod 6.6ft": "", "Reel size 2000": "", "Artificial fly": "" }
   },
   "Truite brune": {
+    "season": { "fr": "Juin à Septembre", "en": "June to September" },
+    "timeOfDay": { "fr": "Crépuscule et nuit", "en": "Dusk and night" },
+    "method": { "fr": "Pêche subtile à la mouche noyée ou aux leurres ondulants en rivière calme.", "en": "Subtle wet fly or wobbler lure fishing in calm rivers." },
     "fr": { "equipment": ["Canne à mouche 9pi #5", "Cuillère ondulante", "Rapala X-Rap", "Ver de mer"], "tips": "Pêche subtile en rivière, souvent en fin de journée." },
     "en": { "equipment": ["Fly rod 9ft #5", "Wobbler spoon", "Rapala X-Rap", "Nightcrawlers"], "tips": "Subtle river fishing, often at dusk." },
     "asin": { "Fly rod 9ft #5": "", "Wobbler spoon": "", "Rapala X-Rap": "" }
   },
   "Doré jaune": {
+    "season": { "fr": "Mai à Octobre", "en": "May to October" },
+    "timeOfDay": { "fr": "Soirée et aube", "en": "Evening and dawn" },
+    "method": { "fr": "Pêche au jig près du fond dans les zones rocheuses et les tombants.", "en": "Jig fishing near bottom in rocky areas and drop-offs." },
     "fr": { "equipment": ["Canne spinning moyenne 6.6pi", "Moulinet 2500", "Jig 1/4oz", "Crépit noir/jaune"], "tips": "Pêche au jig près du fond, surtout en début de soirée." },
     "en": { "equipment": ["Medium spinning rod 6.6ft", "Reel size 2500", "Jig 1/4oz", "Black/yellow curly tail"], "tips": "Jig fishing near bottom, especially early evening." },
     "asin": { "Medium spinning rod 6.6ft": "", "Reel size 2500": "", "Jig 1/4oz": "" }
   },
   "Grand brochet": {
+    "season": { "fr": "Mai à Novembre", "en": "May to November" },
+    "timeOfDay": { "fr": "Avant-midi et fin d'après-midi", "en": "Late morning and late afternoon" },
+    "method": { "fr": "Pêche dans les herbiers avec cuillères ou poissons nageurs en surface.", "en": "Fish weed beds with spoons or swimbaits near the surface." },
     "fr": { "equipment": ["Canne casting moyenne-lourde 7pi", "Moulinet baitcasting", "Cuillère rouge/blanc #5", "Poisson nageur 15cm"], "tips": "Pêche dans les herbiers avec leurres de surface ou cuillères." },
     "en": { "equipment": ["Medium-heavy casting rod 7ft", "Baitcasting reel", "Red/white spoon #5", "Swim bait 6in"], "tips": "Fish weed beds with topwater lures or spoons." },
     "asin": { "Medium-heavy casting rod 7ft": "", "Baitcasting reel": "", "Swim bait 6in": "" }
   },
   "Maskinongé": {
+    "season": { "fr": "Juin à Novembre", "en": "June to November" },
+    "timeOfDay": { "fr": "Mi-journée", "en": "Midday" },
+    "method": { "fr": "Pêche sportive au gros poisson nageur ou bucktail spinner. Bas de ligne en acier obligatoire.", "en": "Trophy fishing with large swimbaits or bucktail spinners. Steel leader required." },
     "fr": { "equipment": ["Canne casting lourde 8pi", "Moulinet baitcasting robuste", "Grand poisson nageur 25cm", "Bucktail spinner"], "tips": "Pêche sportive d'exception. Utiliser un bas de ligne en acier." },
     "en": { "equipment": ["Heavy casting rod 8ft", "Heavy duty baitcasting reel", "Large swim bait 10in", "Bucktail spinner"], "tips": "Trophy sport fishing. Use steel leader." },
     "asin": { "Heavy casting rod 8ft": "", "Heavy duty baitcasting reel": "", "Bucktail spinner": "" }
   },
   "Achigan à petite bouche": {
+    "season": { "fr": "Juin à Octobre", "en": "June to October" },
+    "timeOfDay": { "fr": "Aube et crépuscule", "en": "Dawn and dusk" },
+    "method": { "fr": "Pêche près des structures rocheuses avec tube jig ou crépit.", "en": "Fish near rocky structures with tube jig or curly tail." },
     "fr": { "equipment": ["Canne spinning moyenne 6.6pi", "Moulinet 2500", "Crépit vert/noir", "Tube jig"], "tips": "Pêche près des structures rocheuses et des tombants." },
     "en": { "equipment": ["Medium spinning rod 6.6ft", "Reel size 2500", "Green/black curly tail", "Tube jig"], "tips": "Fish near rocky structures and drop-offs." },
     "asin": { "Medium spinning rod 6.6ft": "", "Reel size 2500": "", "Tube jig": "" }
   },
   "Achigan à grande bouche": {
+    "season": { "fr": "Juin à Octobre", "en": "June to October" },
+    "timeOfDay": { "fr": "Aube et crépuscule", "en": "Dawn and dusk" },
+    "method": { "fr": "Pêche dans les herbiers denses avec grenouille artificielle ou senko.", "en": "Fish dense weed beds with frog lure or senko." },
     "fr": { "equipment": ["Canne casting moyenne 7pi", "Moulinet baitcasting", "Grenouille artificielle", "Senko 5po"], "tips": "Pêche dans les herbiers denses et les zones peu profondes." },
     "en": { "equipment": ["Medium casting rod 7ft", "Baitcasting reel", "Frog lure", "Senko 5in"], "tips": "Fish dense weed beds and shallow areas." },
     "asin": { "Medium casting rod 7ft": "", "Baitcasting reel": "", "Frog lure": "" }
   },
   "Perchaude": {
+    "season": { "fr": "Mai à Octobre", "en": "May to October" },
+    "timeOfDay": { "fr": "Toute la journée", "en": "All day" },
+    "method": { "fr": "Pêche légère au petit jig ou à la pointe de ver sous flotteur près des quais.", "en": "Light fishing with small jig or worm piece under bobber near docks." },
     "fr": { "equipment": ["Canne spinning ultra-légère 5pi", "Moulinet 500", "Petit jig 1/16oz", "Tête de ligne #10"], "tips": "Pêche légère, idéale pour initier les jeunes. Bancs de perchaudes près des quais." },
     "en": { "equipment": ["Ultra-light spinning rod 5ft", "Reel size 500", "Small jig 1/16oz", "Hook #10"], "tips": "Light fishing, great for beginners. Perch schools near docks." },
     "asin": { "Ultra-light spinning rod 5ft": "", "Reel size 500": "", "Small jig 1/16oz": "" }
   },
   "Barbotte brune": {
+    "season": { "fr": "Juin à Août", "en": "June to August" },
+    "timeOfDay": { "fr": "Nuit", "en": "Night" },
+    "method": { "fr": "Pêche de nuit au fond avec appâts naturels (foie de poulet, vers). Eaux calmes et peu profondes.", "en": "Night bottom fishing with natural baits (chicken liver, worms). Calm shallow waters." },
     "fr": { "equipment": ["Canne spinning légère 6pi", "Moulinet 2000", "Ver de nuit", "Hameçon #6"], "tips": "Pêche de nuit au fond, appât naturel (foie de poulet, vers)." },
     "en": { "equipment": ["Light spinning rod 6ft", "Reel size 2000", "Nightcrawlers", "Hook #6"], "tips": "Night fishing on bottom, natural bait (chicken liver, worms)." },
     "asin": { "Light spinning rod 6ft": "", "Reel size 2000": "", "Hook #6": "" }
   },
   "Esturgeon jaune": {
+    "season": { "fr": "Mai à Octobre", "en": "May to October" },
+    "timeOfDay": { "fr": "Jour et nuit", "en": "Day and night" },
+    "method": { "fr": "Pêche de fond dans les grands cours d'eau. Remise à l'eau obligatoire (espèce protégée).", "en": "Bottom fishing in large rivers. Catch & release mandatory (protected species)." },
     "fr": { "equipment": ["Canne lourde 8pi", "Moulinet robuste", "Pâte à esturgeon", "Hameçon #2/0"], "tips": "Pêche de fond dans les grands cours d'eau. Poisson protégé, remise à l'eau obligatoire." },
     "en": { "equipment": ["Heavy rod 8ft", "Heavy duty reel", "Sturgeon dough bait", "Hook #2/0"], "tips": "Bottom fishing in large rivers. Protected species, catch & release mandatory." },
     "asin": { "Heavy rod 8ft": "", "Heavy duty reel": "", "Sturgeon dough bait": "" }
   },
   "Grand corégone": {
+    "season": { "fr": "Mai à Septembre", "en": "May to September" },
+    "timeOfDay": { "fr": "Aube", "en": "Dawn" },
+    "method": { "fr": "Pêche en lac profond à la traîne avec petite cuillère argentée ou montage à mouche.", "en": "Deep lake fishing, trolling with small silver spoon or fly rig." },
     "fr": { "equipment": ["Canne spinning légère 6.6pi", "Moulinet 1000", "Petite cuillère argentée", "Montage à mouche"], "tips": "Pêche en lac profond, souvent à la traîne ou à la verticale." },
     "en": { "equipment": ["Light spinning rod 6.6ft", "Reel size 1000", "Small silver spoon", "Fly rig"], "tips": "Deep lake fishing, often trolling or vertical." },
     "asin": { "Light spinning rod 6.6ft": "", "Reel size 1000": "", "Small silver spoon": "" }
   },
   "Ouananiche": {
+    "season": { "fr": "Juin à Septembre", "en": "June to September" },
+    "timeOfDay": { "fr": "Après-midi", "en": "Afternoon" },
+    "method": { "fr": "Pêche à la mouche en rivière avec streamer ou mouche sèche. Saumon d'eau douce.", "en": "Fly fishing in rivers with streamer or dry fly. Quebec's freshwater salmon." },
     "fr": { "equipment": ["Canne à mouche 9pi #6", "Moulinex à mouche", "Streamer", "Mouche sèche"], "tips": "Pêche à la mouche en rivière. Saumon d'eau douce du Québec." },
     "en": { "equipment": ["Fly rod 9ft #6", "Fly reel", "Streamer", "Dry fly"], "tips": "Fly fishing in rivers. Quebec's freshwater salmon." },
     "asin": { "Fly rod 9ft #6": "", "Fly reel": "", "Streamer": "" }
   },
   "Omble chevalier": {
+    "season": { "fr": "Juin à Septembre", "en": "June to September" },
+    "timeOfDay": { "fr": "Tôt le matin", "en": "Early morning" },
+    "method": { "fr": "Pêche en eau très froide et profonde. Présent surtout dans le nord du Québec.", "en": "Very cold deep water fishing. Mostly in northern Quebec." },
     "fr": { "equipment": ["Canne spinning légère 6pi", "Moulinet 1000", "Petite cuillère", "Mouche noyée"], "tips": "Pêche en eau très froide et profonde. Présent surtout dans le nord du Québec." },
     "en": { "equipment": ["Light spinning rod 6ft", "Reel size 1000", "Small spoon", "Wet fly"], "tips": "Very cold deep water fishing. Mostly in northern Quebec." },
     "asin": { "Light spinning rod 6ft": "", "Reel size 1000": "", "Small spoon": "" }
   },
   "Lotte": {
+    "season": { "fr": "Novembre à Mars", "en": "November to March" },
+    "timeOfDay": { "fr": "Nuit", "en": "Night" },
+    "method": { "fr": "Pêche de nuit sous la glace ou au printemps avec appâts naturels au fond.", "en": "Night fishing under ice or in spring with natural baits on bottom." },
     "fr": { "equipment": ["Canne spinning légère 6pi", "Moulinet 2000", "Ver de mer", "Hameçon #4"], "tips": "Pêche de nuit en hiver ou au printemps sous les glaces." },
     "en": { "equipment": ["Light spinning rod 6ft", "Reel size 2000", "Nightcrawlers", "Hook #4"], "tips": "Night fishing in winter or spring under ice." },
     "asin": { "Light spinning rod 6ft": "", "Reel size 2000": "", "Nightcrawlers": "" }
   },
   "Crapet soleil": {
+    "season": { "fr": "Mai à Septembre", "en": "May to September" },
+    "timeOfDay": { "fr": "Mi-journée", "en": "Midday" },
+    "method": { "fr": "Pêche au flotteur avec petite pointe de ver près des quais et herbiers.", "en": "Bobber fishing with small worm piece near docks and weed beds." },
     "fr": { "equipment": ["Canne ultra-légère 4.6pi", "Moulinet 500", "Petite pointe de ver", "Flotteur"], "tips": "Pêche au flotteur près des quais et des herbiers. Idéal pour les enfants." },
     "en": { "equipment": ["Ultra-light rod 4.6ft", "Reel size 500", "Small worm piece", "Bobber"], "tips": "Bobber fishing near docks and weed beds. Great for kids." },
     "asin": { "Ultra-light rod 4.6ft": "", "Reel size 500": "", "Bobber": "" }
   },
   "Achigan": {
+    "season": { "fr": "Juin à Octobre", "en": "June to October" },
+    "timeOfDay": { "fr": "Aube et crépuscule", "en": "Dawn and dusk" },
+    "method": { "fr": "Polyvalent: Texas rig, crépit, poisson nageur selon le type d'eau.", "en": "Versatile: Texas rig, curly tail, swim bait depending on water type." },
     "fr": { "equipment": ["Canne casting moyenne 6.6pi", "Moulinet baitcasting", "Crépit noir/bleu", "Texas rig"], "tips": "Polyvalent, adaptable selon le type d'eau et la saison." },
     "en": { "equipment": ["Medium casting rod 6.6ft", "Baitcasting reel", "Black/blue curly tail", "Texas rig"], "tips": "Versatile, adaptable to water type and season." },
     "asin": { "Medium casting rod 6.6ft": "", "Baitcasting reel": "", "Texas rig": "" }
   },
   "Meunier noir": {
+    "season": { "fr": "Avril à Octobre", "en": "April to October" },
+    "timeOfDay": { "fr": "Jour", "en": "Daytime" },
+    "method": { "fr": "Pêche au fond avec appât naturel. Peu recherché mais combatif.", "en": "Bottom fishing with natural bait. Less sought but feisty." },
     "fr": { "equipment": ["Canne spinning légère 6pi", "Moulinet 2000", "Ver de terre", "Hameçon #8"], "tips": "Pêche au fond avec appât naturel. Peu recherché mais combatif." },
     "en": { "equipment": ["Light spinning rod 6ft", "Reel size 2000", "Earthworms", "Hook #8"], "tips": "Bottom fishing with natural bait. Less sought but feisty." },
     "asin": { "Light spinning rod 6ft": "", "Reel size 2000": "", "Hook #8": "" }
   },
   "Éperlan arc-en-ciel": {
+    "season": { "fr": "Janvier à Mars", "en": "January to March" },
+    "timeOfDay": { "fr": "Jour", "en": "Daytime" },
+    "method": { "fr": "Pêche blanche hivernale très populaire au Québec. Petits hameçons appâtés.", "en": "Very popular winter ice fishing in Quebec. Small baited hooks." },
     "fr": { "equipment": ["Canne ultra-légère 4pi", "Moulinet 500", "Petit hameçon #14", "Appât à éperlan"], "tips": "Pêche blanche hivernale très populaire au Québec." },
     "en": { "equipment": ["Ultra-light rod 4ft", "Reel size 500", "Small hook #14", "Smelt bait"], "tips": "Very popular winter ice fishing in Quebec." },
     "asin": { "Ultra-light rod 4ft": "", "Reel size 500": "", "Smelt bait": "" }

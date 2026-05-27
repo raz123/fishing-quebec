@@ -18,7 +18,8 @@ export function useGeolocation() {
       (pos) => {
         userPosition.value = {
           lat: pos.coords.latitude,
-          lng: pos.coords.longitude
+          lng: pos.coords.longitude,
+          accuracy: pos.coords.accuracy
         }
         locating.value = false
       },

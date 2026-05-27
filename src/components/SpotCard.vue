@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useI18n } from '../i18n/index.js'
 import SpeciesList from './SpeciesList.vue'
-import equipmentData from '../../data-src/equipment.json'
 
 const props = defineProps({
   spot: { type: Object, default: null }
@@ -69,7 +68,6 @@ const spotType = computed(() => {
       <h3 class="section-header">{{ t('spot.species') }} ({{ (spot.properties.species || []).length }})</h3>
       <SpeciesList
         :species-list="spot.properties.species || []"
-        :equipment-data="equipmentData"
       />
     </div>
   </div>
